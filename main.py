@@ -14,23 +14,23 @@ CORS(app)
 def home(data):
     if data == "update":
         #อัพเดทโค้ดเว็บ
-        web = git.cmd.Git('/var/www/html')
+        web = git.cmd.Git('/var/www/html_cocoon')
         web.pull()
         time.sleep(10)
         #อัพเดทโค้ด hottub python
-        machine = git.cmd.Git('/home/pi/hottub_ma')
+        machine = git.cmd.Git('/home/pi/hottub_cocoon')
         machine.pull()
         time.sleep(10)
         #server python
-        machine_server = git.cmd.Git('/home/pi/hottub_server_rasp')
+        machine_server = git.cmd.Git('/home/pi/hottub_server_cocoon')
         machine_server.pull()
         time.sleep(10)
         #logger
-        machine_logger = git.cmd.Git('/home/pi/logger_rasp')
+        machine_logger = git.cmd.Git('/home/pi/logger_cocoon')
         machine_logger.pull()
         time.sleep(10)
         #logger volt
-        machine_logger_volt = git.cmd.Git('/home/pi/logger_volt_rasp')
+        machine_logger_volt = git.cmd.Git('/home/pi/logger_volt_cocoon')
         machine_logger_volt.pull()
         time.sleep(10)
 
